@@ -86,7 +86,7 @@ const RpsGame = () => {
 
         <result className='flex flex-col items-center'>
             <h1 className='text-white  text-2xl'>Round : {round}</h1>
-            <h1 className='text-8xl text-[#768181] mt-6'>{result}</h1>
+            <h1 className='text-3xl text-[#768181] mt-6'>{result}</h1>
         </result>
         <div className='flex justify-center '>
             {gameOver  &&

@@ -18,7 +18,7 @@ const MyRoute = () => {
         <div >
         {
             loading?
-            <div className="loading flex-col bg-black">
+            <div className="loading flex-col">
                 <PacmanLoader 
                 color="#1b9421"
                 loading={loading}
