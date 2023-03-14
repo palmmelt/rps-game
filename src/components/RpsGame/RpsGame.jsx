@@ -57,11 +57,11 @@ const RpsGame = () => {
 
   return (
     <div className='mt-10'>
-        <h1 className='flex justify-center text-white text-2xl'>ROCK PAPER SCISSORS</h1>
+        <h1 className='flex justify-center text-white text-3xl'>RPS GAME.</h1>
         <score className='flex justify-around mt-10'>
-            <h1 className=' text-2xl text-[#8db5ff]'>Your points : {userPoints}</h1>
+            <h1 className=' text-xl text-[#8db5ff]'>Your points : {userPoints}</h1>
             <h1></h1>
-            <h1 className=' text-2xl text-[#ff8d8d]'>Bot points : {botPoints}</h1>
+            <h1 className=' text-xl text-[#ff8d8d]'>Bot points : {botPoints}</h1>
         </score>
         <choice className="flex justify-around items-center mt-10">
             <user>
@@ -77,7 +77,7 @@ const RpsGame = () => {
         <div className='flex justify-center mt-10'>
             {choices.map((choice,index)=>{
                 return (
-                <button className='m-1 my-10 w-[150px] h-[40px] bg-[#365f24] border border-[#365f24] rounded-md text-white text-2xl' key={index} onClick={()=> handleOnClick(choice)}>
+                <button className='m-1 my-10 w-[150px] h-[40px] hover:bg-[#365f24] hover:border-[#172c0d] bg-[#172c0d] border border-[#365f24] rounded-md text-white text-2xl' key={index} onClick={()=> handleOnClick(choice)}>
                     {choice}
                 </button>
                 )
@@ -90,21 +90,22 @@ const RpsGame = () => {
         </result>
         <div className='flex justify-center '>
             {gameOver  &&
-                <button className='flex justify-center text-2xl text-white items-center mt-10 bg-[#00300a] px-4 border rounded-lg h-[40px] mb-10' onClick={()=> reset()}> Restart Game</button>
+                <button className='hover:bg-[#365f24] flex justify-center text-2xl text-white items-center mt-10 bg-[#00300a] px-4 border rounded-lg h-[40px] mb-10' onClick={()=> reset()}> Restart Game</button>
             }
         </div>
         {gameOver  &&
-            <div className="">
-                <div className='light x1'></div>
-                <div className='light x2'></div>
-                <div className='light x3'></div>
-                <div className='light x4'></div>
-                <div className='light x5'></div>
-                <div className='light x6'></div>
-                <div className='light x7' ></div>
-                <div className='light x8' ></div>
-                <div className='light x9'></div>
-            </div>
+            <ul className="circles z-10">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
         }
     </div>
   )

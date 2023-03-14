@@ -18,14 +18,14 @@ const MyRoute = () => {
         <div >
         {
             loading?
-            <div className="loading flex-col">
+            <div className="loading flex-col bg-black">
                 <PacmanLoader 
-                color="#FFDA00"
+                color="#1b9421"
                 loading={loading}
                 size={30}
                 aria-label="Loading Spinner"
                 data-testid="loader"
-            /><p className='text-[#FFDA00] font-bold p-3 text-3xl ml-24 mt-1'>RPS Game.</p>
+            /><p className='text-[#1b9421] font-bold p-3 text-3xl ml-24 mt-1'>RPS Game.</p>
             </div>
             :
             <Switch>
