@@ -86,27 +86,29 @@ const RpsGame = () => {
 
         <result className='flex flex-col items-center'>
             <h1 className='text-white  text-2xl'>Round : {round}</h1>
-            <h1 className='text-3xl text-[#768181] mt-6'>{result}</h1>
+            <h1 className='text-4xl text-[#768181] mt-6 '>{result}</h1>
         </result>
         <div className='flex justify-center '>
             {gameOver  &&
                 <button className='hover:bg-[#365f24] flex justify-center text-2xl text-white items-center mt-10 bg-[#00300a] px-4 border rounded-lg h-[40px] mb-10' onClick={()=> reset()}> Restart Game</button>
             }
         </div>
-        {gameOver  &&
-            <ul className="circles z-10">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        }
+        <div>
+            {gameOver  &&
+                <ul className="circles z-10">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            }
+        </div>
     </div>
   )
 }
