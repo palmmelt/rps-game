@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import './RpsGame.css'
 
 const RpsGame = () => {
     const [userChoice,setUserChoice] = useState('rock');
@@ -7,13 +8,17 @@ const RpsGame = () => {
     const [botPoints,setBotPoints] = useState(0);
     const [turnResult,setTurnResult] = useState(null);
     const [result,setResult] = useState('');
-    const [gaemOver,setGameOver] = useState(false);
+    const [gameOver,setGameOver] = useState(false);
+    const [round,setRound] = useState(0);
 
     const choices = ['rock','paper','scissors'];
 
     const handleOnClick =(choice)=>{
-        setUserChoice(choice);
-        generateBotChoice();
+        if(gameOver === false){
+            setUserChoice(choice);
+            generateBotChoice();
+            setRound(round+1);
+        }
     };
 
     const generateBotChoice= () =>{
@@ -52,7 +57,7 @@ const RpsGame = () => {
 
   return (
     <div className='mt-10'>
-        <h1 className='flex justify-center text-white text-4xl'>ROCK PAPER SCISSORS</h1>
+        <h1 className='flex justify-center text-white text-2xl'>ROCK PAPER SCISSORS</h1>
         <score className='flex justify-around mt-10'>
             <h1 className=' text-2xl text-[#8db5ff]'>Your points : {userPoints}</h1>
             <h1></h1>
@@ -72,7 +77,7 @@ const RpsGame = () => {
         <div className='flex justify-center mt-10'>
             {choices.map((choice,index)=>{
                 return (
-                <button className='m-10 w-[150px] h-[40px] bg-[#365f24] border border-[#365f24] rounded-md text-white text-2xl' key={index} onClick={()=> handleOnClick(choice)}>
+                <button className='m-1 my-10 w-[150px] h-[40px] bg-[#365f24] border border-[#365f24] rounded-md text-white text-2xl' key={index} onClick={()=> handleOnClick(choice)}>
                     {choice}
                 </button>
                 )
@@ -80,14 +85,27 @@ const RpsGame = () => {
         </div>
 
         <result className='flex flex-col items-center'>
-            <h1 className='text-white  text-2xl'>Turn Result : {turnResult}</h1>
+            <h1 className='text-white  text-2xl'>Round : {round}</h1>
             <h1 className='text-8xl text-[#768181] mt-6'>{result}</h1>
         </result>
         <div className='flex justify-center '>
-            {gaemOver  &&
+            {gameOver  &&
                 <button className='flex justify-center text-2xl text-white items-center mt-10 bg-[#00300a] px-4 border rounded-lg h-[40px] mb-10' onClick={()=> reset()}> Restart Game</button>
             }
         </div>
+        {gameOver  &&
+            <div className="">
+                <div className='light x1'></div>
+                <div className='light x2'></div>
+                <div className='light x3'></div>
+                <div className='light x4'></div>
+                <div className='light x5'></div>
+                <div className='light x6'></div>
+                <div className='light x7' ></div>
+                <div className='light x8' ></div>
+                <div className='light x9'></div>
+            </div>
+        }
     </div>
   )
 }
