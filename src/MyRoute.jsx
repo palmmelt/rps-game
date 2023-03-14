@@ -14,7 +14,7 @@ const MyRoute = () => {
         },3000)
     },[])
     return (
-    <BrowserRouter>
+    <BrowserRouter basename={'/rps-game'}>
         <div >
         {
             loading?

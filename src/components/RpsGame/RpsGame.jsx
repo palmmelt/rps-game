@@ -6,7 +6,7 @@ const RpsGame = () => {
     const [userPoints,setUserPoints] = useState(0);
     const [botPoints,setBotPoints] = useState(0);
     const [turnResult,setTurnResult] = useState(null);
-    const [result,setResult] = useState('Let\'s see who wins');
+    const [result,setResult] = useState('');
     const [gaemOver,setGameOver] = useState(false);
 
     const choices = ['rock','paper','scissors'];
