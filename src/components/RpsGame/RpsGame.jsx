@@ -95,7 +95,7 @@ const RpsGame = () => {
         </div>
         <div>
             {gameOver  &&
-                <ul className="circles z-10">
+                <ul className="circles z-10 h-screen w-full">
                     <li></li>
                     <li></li>
                     <li></li>
