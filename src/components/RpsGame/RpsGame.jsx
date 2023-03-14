@@ -60,13 +60,13 @@ const RpsGame = () => {
         </score>
         <choice className="flex justify-around items-center mt-10">
             <user>
-                <img src={`/images/rps-game/${userChoice}.png`} alt=''/>
+                <img src={process.env.PUBLIC_URL+`/images/${userChoice}.png`} alt=''/>
             </user>
             <di >
                 <h1 className='text-[#ffffff] text-4xl'>VS</h1>
             </di>
             <bot>
-                <img src={`/images/rps-game/${botChoice}.png`} alt=''/>
+                <img src={process.env.PUBLIC_URL+`/images/${botChoice}.png`} alt=''/>
             </bot>
         </choice>
         <div className='flex justify-center mt-10'>
@@ -83,9 +83,9 @@ const RpsGame = () => {
             <h1 className='text-white  text-2xl'>Turn Result : {turnResult}</h1>
             <h1 className='text-8xl text-[#768181] mt-6'>{result}</h1>
         </result>
-        <div className='flex justify-center'>
+        <div className='flex justify-center '>
             {gaemOver  &&
-                <button className='flex justify-center text-2xl text-white items-center mt-10 bg-[#00300a] px-4 border rounded-lg h-[40px]' onClick={()=> reset()}> Restart Game</button>
+                <button className='flex justify-center text-2xl text-white items-center mt-10 bg-[#00300a] px-4 border rounded-lg h-[40px] mb-10' onClick={()=> reset()}> Restart Game</button>
             }
         </div>
     </div>
