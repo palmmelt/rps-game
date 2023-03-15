@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import './RpsGame.css'
 
 const RpsGame = () => {
     const [userChoice,setUserChoice] = useState('rock');
@@ -91,22 +90,6 @@ const RpsGame = () => {
         <div className='flex justify-center'>
             {gameOver  &&
                 <button className='hover:bg-[#365f24] flex justify-center text-2xl text-white items-center mt-10 bg-[#00300a] px-4 border rounded-lg h-[40px] mb-10 z-50' onClick={()=> reset()}> Restart Game</button>
-            }
-        </div>
-        <div>
-            {gameOver  &&
-                <ul className="circles z-10 h-[150vh] w-full">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
             }
         </div>
     </div>
